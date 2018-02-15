@@ -2,17 +2,17 @@
 
 The CodinGame SDK is a Java project that allows you to write programming games for [CodinGame](https://www.codingame.com).
 
-A game is divided in 2 parts: the **referee** and the **viewer**. The **referee** is a program that implements the game rules. It will communicate with the players and at the end it will give a score to each player. The **viewer** displays the game using *frames* sent by the *referee*.
+A game is divided into 2 parts: the **referee** and the **viewer**. The **referee** is a program that implements the game rules. It will communicate with the players and at the end it will assign a score to each player. The **viewer** displays the game using *frames* sent by the **referee**.
 
-The CodinGame SDK provides the main classes to write the **referee** and a **viewer**. A module called **GraphicEntityModule** allows to display sprites and shapes directly from the **referee** code. If you want to do something more advanced, it's possible to write your own module.
+The CodinGame SDK provides the main classes to write the **referee** and a **viewer**. A module called **GraphicEntityModule** allows the display of sprites and shapes directly from the **referee** code. If you want to do something more advanced, it's possible to write your own module.
 
 # Main Classes
 
-A game must at least contains the classes `Referee` and `Player`, which inherits from the classes `AbstractReferee` and `AbstractPlayer` respectively.
+A game must at least contains the classes `Referee` and `Player`, which inherit from the classes `AbstractReferee` and `AbstractPlayer` respectively.
 
-The `Referee` class must implements the methods `init` and `gameTurn`. The `Player` class is mainly used to communicate with the agent (you must give the input, then read the output).
+The `Referee` class must implement the methods `init` and `gameTurn`. The `Player` class is mainly used to communicate with the agent (you must give the input, then read the output).
 
-The entry point of the game is the class `GameManager`. The `GameManager` calls the `Referee` at each turn, send data to the viewer
+The entry point of the game is the class `GameManager`. The `GameManager` calls the `Referee` on each turn, and sends data to the viewer.
 
 ![Main classes](schema-sdk.svg)
 
@@ -35,7 +35,7 @@ First of all, you need to download the source code of the game:
 git clone https://github.com/CodinGame/game-tictactoe.git
 ```
 
-Then, import as an existing maven project this project in your IDE:
+Then, import this project as an existing maven project into your IDE:
 - Eclipse: File > Import > Existing Maven Projects
 - IntelliJ IDEA: Import Project > Select game-tictactoe > Import project from external model > Maven
 
@@ -91,7 +91,7 @@ Export the game from the test page and import it on CodinGame. The game will be 
 
 ## Create Your Own Game
 
-Now that you are able to start a game on your computer and export it to CodinGame, you can start creating your own game. For that, you are suggested to start with the Skeleton: [https://github.com/CodinGame/game-skeleton](https://github.com/CodinGame/game-skeleton)
+Now that you are able to start a game on your computer and export it to CodinGame, you can start creating your own game. For that, it is suggested you start with the Skeleton: [https://github.com/CodinGame/game-skeleton](https://github.com/CodinGame/game-skeleton)
 
 You can also read the code of others games (see below). More advanced documentation is available there: [https://github.com/CodinGame/codingame-game-engine](https://github.com/CodinGame/codingame-game-engine)
 
