@@ -97,10 +97,13 @@ Now that you are able to start a game on your computer and export it to CodinGam
 
 You can also read the code of others games (see below). More advanced documentation is available there: [https://github.com/CodinGame/codingame-game-engine](https://github.com/CodinGame/codingame-game-engine)
 
+If you do not have an artistic mind, we provide a [Github asset repository](https://github.com/CodinGame/codingame-sdk-assets) with a lot of free graphical resources to boostrap your game.
+
 # Resources
 
 - [Javadoc](https://codingame.github.io/codingame-sdk-doc/)
 - [SDK source and documentation](https://github.com/CodinGame/codingame-game-engine)
+- [Free to use graphical assets](https://github.com/CodinGame/codingame-sdk-assets)
 - [Game Skeleton](https://github.com/CodinGame/game-skeleton)
 - [Contribute Page](https://www.codingame.com/contribute/)
 - [Tic-tac-toe Game](https://github.com/CodinGame/game-tictactoe)
