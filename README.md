@@ -97,7 +97,7 @@ Now that you are able to start a game on your computer and export it to CodinGam
 
 You can also read the code of others games (see below). More advanced documentation is available there: [https://github.com/CodinGame/codingame-game-engine](https://github.com/CodinGame/codingame-game-engine)
 
-If you do not have an artistic mind, we provide a [Github asset repository](https://github.com/CodinGame/codingame-sdk-assets) with a lot of free graphical resources to boostrap your game.
+If you do not have an artistic mind, we provide a [Github asset repository](https://github.com/CodinGame/codingame-sdk-assets) with a lot of free graphical resources to bootstrap your game.
 
 # Resources
 
