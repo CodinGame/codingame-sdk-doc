@@ -108,6 +108,7 @@ If you do not have an artistic mind, we provide a [Github asset repository](http
 - [Contribute Page](https://www.codingame.com/contribute/)
 - [Tic-tac-toe Game](https://github.com/CodinGame/game-tictactoe)
 - [Pong Game](https://github.com/CodinGame/game-pong)
+- [JavaScript Module Examples](https://github.com/CodinGame/game-modules)
 
 # Contact
 
