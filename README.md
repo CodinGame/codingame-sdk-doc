@@ -22,7 +22,7 @@ This document will show you, through the simple game "Tic-tac-toe" how to create
 
 The source code is available on GitHub: [https://github.com/CodinGame/game-tictactoe](https://github.com/CodinGame/game-tictactoe)
 
-Note that this document covers how to create a **Multiplayer** game. A **Solo** or an **Optimization** game is quite similar but requires some adjustments. See [What differs to a Solo or an Optimization game]().
+Note that this document covers how to create a **Multiplayer** game. A **Solo** or an **Optimization** game is quite similar but requires some adjustments. See [What differs to a Solo or an Optimization game](./README_SOLO.md).
 
 ## Requirements
 
