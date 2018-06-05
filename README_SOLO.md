@@ -47,7 +47,7 @@ Here's an example of the file hierarchy for a **Solo** game project:
 │           └── log4j2.properties
 ```
 
-- **./config:** contains the settings such as the game title, statement, number of players, test cases, etc.
+- **./config:** contains the settings such as the game title, statement, test cases, etc.
 - **./src/main/java:** source code of the game itself
 - **./src/main/resources:** graphical assets and configuration of the view
 - **./src/test/java:** classes used for local development (code to test your game)
@@ -58,12 +58,12 @@ The test cases are json files and must be placed in the `config` directory. See 
 
 ## Several questions
 
-Just as a Multiplayer game, a **Solo** game can have several questions (these are called *leagues* in a Multiplayer game). A question is generally used to **change one of your game's rules**.
+Just like a Multiplayer game, a **Solo** game can have several questions (these are called *leagues* in a Multiplayer game). Having multiple questions can help segment your game into parts of rising difficulty.
 
-In order to create several questions, you must create sub directories named `level<number>` where the `<number>` will be used to order your questions. These directories can contain the same kind of files as your `config` directory, such as a statement, test cases, etc. 
+In order to create several questions, you must create sub directories named `level<number>` where the `<number>` will be used to display your questions in the right order. These directories can contain the same kind of files as your `config` directory, such as a statement, test cases, etc. 
 
 Note that you **do not need** to have copies of your files in these sub directories if they are common to all the questions. You can, for instance, have one `config.ini` file in your `config` directory that will be inherited by all the questions.
-Also, take in consideration that **Optimization** games do **not** support this feature.
+However, take in consideration that **Optimization** games do **not** support this feature.
 
 ## End of the game
 
@@ -75,7 +75,7 @@ and
 ```java
 gameManager.loseGame();
 ```
-Which can take an optional String parameter as an end game message.
+Which can take an optional `String` parameter as an end game message.
 
 ## Optimization game
 
@@ -83,15 +83,15 @@ Which can take an optional String parameter as an end game message.
 
 First, you will need to add a `criteria` and a `sorting_order` property in `config.ini`.
 - The `criteria` corresponds to the label of the player's score. For example, it can be `Points`, `Fuel` or `Distance`.
-- The `sorting_order` determines the ranking order. Its value must be either `asc` or `desc`. Does the player whose Fuel quantity is higher should be first? Choose `asc`. Is the goal to find a solution in a short time? Choose `desc` in this case.
+- The `sorting_order` determines the ranking order. Its value must be either `asc` or `desc`. If the player whose Fuel quantity is higher should be first, choose `asc`. If the goal is to win the game in the shortest time, choose `desc`.
 
 You can also choose to translate your criteria in French by using the optional properties `criteria_en` and `criteria_fr`.
 
-Once this configuration done, you can now set your player's score. We advise you to set it at the end of the game as below:
+Once this configuration is done, you can now set your player's score. We advise you to set it at the end of the game as below:
 ```java
 @Override
 public void onEnd() {
-    // I put my criteria "Fuel" to what's left of the player's fuel
+    // I set my criteria "Fuel" to what's left of the player's fuel
     gameManager.putMetadata("Fuel", remainingFuel);
 }
 ```
