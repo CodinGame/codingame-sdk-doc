@@ -2,17 +2,17 @@
 
 The CodinGame SDK is a Java project that allows you to write programming games for [CodinGame](https://www.codingame.com).
 
-A game is divided into 2 parts: the **referee** and the **viewer**. The **referee** is a program that implements the game rules. It will communicate with the players and at the end it will assign a score to each player. The **viewer** displays the game using *frames* sent by the **referee**.
+A game is divided into 2 parts: the **referee** and the **viewer**. The **referee** is a program that implements the game rules. It will communicate with the players and at the end it will assign a score to each player (for *Multiplayer* and *Optimization* games) or a win/lose status. The **viewer** displays the game using *frames* sent by the **referee**.
 
 The CodinGame SDK provides the main classes to write the **referee** and a **viewer**. A module called **GraphicEntityModule** allows the display of sprites and shapes directly from the **referee** code. If you want to do something more advanced, it's possible to write your own module.
 
 # Main Classes
 
-A game must at least contains the classes `Referee` and `Player`, which inherit from the classes `AbstractReferee` and `AbstractPlayer` respectively.
+A game must at least contains the classes `Referee` and `Player`, which inherit from the classes `AbstractReferee` and `AbstractMultiplayerPlayer` or `AbstractSoloPlayer` respectively.
 
 The `Referee` class must implement the methods `init` and `gameTurn`. The `Player` class is mainly used to communicate with the agent (you must give the input, then read the output).
 
-The entry point of the game is the class `GameManager`. The `GameManager` calls the `Referee` on each turn, and sends data to the viewer.
+The entry point of the game is the class `SoloGameManager` or `MultiplayerGameManager` (corresponding to the type of game you are creating). This class calls the `Referee` on each turn, and sends data to the viewer.
 
 ![Main classes](schema-sdk.svg)
 
@@ -21,6 +21,8 @@ The entry point of the game is the class `GameManager`. The `GameManager` calls 
 This document will show you, through the simple game "Tic-tac-toe" how to create your own game and test it.
 
 The source code is available on GitHub: [https://github.com/CodinGame/game-tictactoe](https://github.com/CodinGame/game-tictactoe)
+
+Note that this document covers how to create a **Multiplayer** game. A **Solo** or an **Optimization** game is quite similar but requires some adjustments. See [What differs to a Solo or an Optimization game]().
 
 ## Requirements
 
@@ -45,31 +47,31 @@ Here's the file hierarchy for the project Tic-tac-toe:
 ```
 .
 ├── config
-│   ├── Boss.java
-│   ├── config.ini
-│   └── statement_en.html
+│   ├── Boss.java
+│   ├── config.ini
+│   └── statement_en.html
 ├── pom.xml
 ├── README.md
 ├── src
-│   ├── main
-│   │   ├── java
-│   │   │   └── com
-│   │   │       └── codingame
-│   │   │           └── game
-│   │   │               ├── Player.java
-│   │   │               └── Referee.java
-│   │   └── resources
-│   │       └── view
-│   │           ├── assets
-│   │           │   └── Background.jpg
-│   │           └── config.js
-│   └── test
-│       ├── java
-│       │   ├── Main.java
-│       │   ├── Player1.java
-│       │   └── Player2.java
-│       └── resources
-│           └── log4j2.properties
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── codingame
+│   │   │           └── game
+│   │   │               ├── Player.java
+│   │   │               └── Referee.java
+│   │   └── resources
+│   │       └── view
+│   │           ├── assets
+│   │           │   └── Background.jpg
+│   │           └── config.js
+│   └── test
+│       ├── java
+│       │   ├── Main.java
+│       │   ├── Player1.java
+│       │   └── Player2.java
+│       └── resources
+│           └── log4j2.properties
 ```
 
 - **./config:** contains the settings such as the game title, statement, number of players, etc.
