@@ -97,14 +97,16 @@ Then, import on CodinGame the game you have exported during the previous step. T
 
 Now that you are able to start a game on your computer and export it to CodinGame, you can start creating your own game. For that, it is suggested you start with the Skeleton: [https://github.com/CodinGame/game-skeleton](https://github.com/CodinGame/game-skeleton)
 
+A more in depth version of the documentation is available here : [Create your own game - Tech.io] (https://tech.io/playgrounds/25775/)
+
 You can also read the code of others games (see below). More advanced documentation is available there: [https://github.com/CodinGame/codingame-game-engine](https://github.com/CodinGame/codingame-game-engine)
 
 If you do not have an artistic mind, we provide a [Github asset repository](https://github.com/CodinGame/codingame-sdk-assets) with a lot of free graphical resources to bootstrap your game.
 
 # Resources
-
+- [Create your own game - Tech.io] (https://tech.io/playgrounds/25775/)
 - [Javadoc](https://codingame.github.io/codingame-sdk-doc/)
-- [SDK source and documentation](https://github.com/CodinGame/codingame-game-engine)
+- [SDK source](https://github.com/CodinGame/codingame-game-engine)
 - [Free to use graphical assets](https://github.com/CodinGame/codingame-sdk-assets)
 - [Game Skeleton](https://github.com/CodinGame/game-skeleton)
 - [Contribute Page](https://www.codingame.com/contribute/)
