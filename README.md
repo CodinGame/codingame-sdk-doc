@@ -2,7 +2,7 @@
 
 The CodinGame SDK is a Java project that allows you to write programming games for [CodinGame](https://www.codingame.com).
 
-The documentation has been moved to a new location : [Tech.io documentation] (https://tech.io/playgrounds/25775/)
+The documentation has been moved to a new location : [Tech.io documentation](https://tech.io/playgrounds/25775/)
 
 # Other ressources
 - [Javadoc](https://codingame.github.io/codingame-sdk-doc/)
